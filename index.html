@@ -1062,6 +1062,7 @@
     <form action="https://formspree.io/f/admin@so404atl.com" method="POST" class="email-capture-row">
       <input type="email" name="email" class="email-input" placeholder="Your email address" required>
       <input type="hidden" name="_subject" value="New So ATL Drop Notification Signup">
+      <input type="hidden" name="_next" value="https://so404atl.com">
       <button type="submit" class="email-btn">Notify Me</button>
     </form>
   </div>
@@ -1089,19 +1090,20 @@
       <span class="perk-desc">Stay locked in with the brand</span>
     </div>
   </div>
-  <div class="apply-form">
+  <form action="https://formspree.io/f/admin@so404atl.com" method="POST" class="apply-form">
+    <input type="hidden" name="_subject" value="New So ATL Ambassador Application">
+    <input type="hidden" name="_next" value="https://so404atl.com">
     <div class="apply-row">
-      <input type="text" class="email-input" id="applyName" placeholder="Your name" style="margin-bottom:0">
-      <input type="email" class="email-input" id="applyEmail" placeholder="Your email" style="margin-bottom:0; border-left: none;">
+      <input type="text" name="name" class="email-input" placeholder="Your name" required style="margin-bottom:0">
+      <input type="email" name="email" class="email-input" placeholder="Your email" required style="margin-bottom:0; border-left: none;">
     </div>
     <div class="apply-row" style="margin-top:1px;">
-      <input type="text" class="email-input" id="applyHandle" placeholder="Instagram or TikTok handle (@)" style="width:100%">
+      <input type="text" name="handle" class="email-input" placeholder="Instagram or TikTok handle (@)" style="width:100%">
     </div>
     <div style="margin-top:1px;">
-      <button class="email-btn" style="width:100%; padding:16px;" onclick="handleApply(this)">Apply Now</button>
+      <button type="submit" class="email-btn" style="width:100%; padding:16px;">Apply Now</button>
     </div>
-    <div class="email-confirm" id="applyConfirm">✓ Application received. We'll be in touch.</div>
-  </div>
+  </form>
 </section>
 
 <!-- FOOTER -->
