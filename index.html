@@ -926,7 +926,7 @@
     <li><a href="#ambassador">Ambassador</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="#drops">fresh 26 drops soon</a>
+  <a class="nav-cta" href="#drops">First Drop Soon</a>
 </nav>
 
 <!-- HERO -->
@@ -1059,11 +1059,11 @@
   <!-- Email Capture -->
   <div class="email-capture">
     <div class="email-capture-label">Be First In Line</div>
-    <div class="email-capture-row">
-      <input type="email" class="email-input" placeholder="Your email address">
-      <button class="email-btn" onclick="handleEmailSignup(this)">Notify Me</button>
-    </div>
-    <div class="email-confirm" id="emailConfirm">✓ You're on the list. We'll hit you when it drops.</div>
+    <form action="https://formspree.io/f/admin@so404atl.com" method="POST" class="email-capture-row">
+      <input type="email" name="email" class="email-input" placeholder="Your email address" required>
+      <input type="hidden" name="_subject" value="New So ATL Drop Notification Signup">
+      <button type="submit" class="email-btn">Notify Me</button>
+    </form>
   </div>
 </section>
 
@@ -1115,7 +1115,7 @@
     <a href="https://tiktok.com/@so404atl" target="_blank">TikTok</a>
     <a href="#" target="_blank">Twitter</a>
   </div>
-  <div class="footer-copy">© 2026 So ATL. All Rights Reserved.</div>
+  <div class="footer-copy">© 2025 So ATL. All Rights Reserved.</div>
 </footer>
 
 
@@ -1134,10 +1134,14 @@ async function handleEmailSignup(btn) {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://formspree.io/f/admin@so404atl.com', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ email: input.value, _subject: 'New So ATL Drop Notification Signup' })
+      body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_KEY',
+        email: input.value,
+        subject: 'New So ATL Drop Notification Signup'
+      })
     });
 
     if (res.ok) {
@@ -1178,14 +1182,15 @@ async function handleApply(btn) {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://formspree.io/f/admin@so404atl.com', {
+    const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_KEY',
         name,
         email,
         handle,
-        _subject: 'New So ATL Ambassador Application'
+        subject: 'New So ATL Ambassador Application'
       })
     });
 
